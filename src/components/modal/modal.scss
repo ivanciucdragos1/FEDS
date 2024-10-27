@@ -1,0 +1,32 @@
+.modal{
+    z-index: 999;
+    width: 555px;
+    display :flex;
+    flex-direction: column;
+    float: inline-end;
+    align-items: left;
+    justify-content: left;
+    justify-items: left;
+    background-color: #a4dd70;
+    margin-left: 10%;
+    border-radius: 10px;
+    input{
+        border-radius: 5px;
+        margin-left: 5%;
+        width: 15%;
+    }
+    label{
+        margin-top: 15px;
+        text-align: left;
+        margin-left: 5%;
+    }
+    button{
+        margin-left: 5%;
+        width: fit-content;
+        margin-top: 10px;
+        margin-bottom: 2%;
+    }
+    select{
+        width: fit-content;
+    }
+}
