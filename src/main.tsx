@@ -8,6 +8,7 @@ import Login from "./pages/login";
 import UsersPage from "./pages/user.page";
 import { jwtDecode } from "jwt-decode";
 import Unauthorized from "./pages/unauthorized/Unauthorized";
+// import { socket, SocketContext, SocketProvider } from "./components/Context/SocketContext";
 
 export interface UserCurrent {
     role: string,
@@ -38,6 +39,7 @@ const Main = (): JSX.Element => {
             <Route path="/register" element={<LoginForm login={false}/>}/>
             <Route path="/devices/create" element={user.role === "ADMIN" ? <DeviceForm/> : <Unauthorized/>}/>
         </Routes>
+        {/* <SocketProvider value={socket}></SocketProvider> */}
     </div>
 }
 
