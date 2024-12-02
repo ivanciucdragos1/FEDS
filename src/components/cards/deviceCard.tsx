@@ -35,19 +35,17 @@ const DeviceCard: React.FC<Partial<Device>> = (props: Partial<Device>): JSX.Elem
     const energySet: DateFilteredConsumption[] = [];
     const selectedConsumption = useRef([{day: 0, hour:0, hrConsumption: 0}]);
     useEffect( () => {
-        console.log(props.id);
         getAxiosEnergyInstance().get(`/${props.id}`).then(res => {setEnergyConsumptionSet(res.data);})
     })
 
     useEffect(() => {
-        console.log(energyConsumptionSet);
         energyConsumptionSet.forEach(data => {
             const date = new Date(data.timestamp);
             const hrEnergy: DateFilteredConsumption = {day: date.getDate(), hour:date.getHours(), hrConsumption: data.hrConsumption};
             energySet.push(hrEnergy);
         })
         selectedConsumption.current = energySet.filter(data => data.day === new Date(selectedDate.current).getDate());
-    },[selectedDate, energyConsumptionSet, energySet]);
+    },[selectedDate, energyConsumptionSet]);
 
 
     return <div className="device">

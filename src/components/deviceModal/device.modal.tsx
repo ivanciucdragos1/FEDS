@@ -1,5 +1,4 @@
 import { useState } from "react";
-import getAxiosInstance from "../../axios.service";
 import { Device } from "../cards/deviceCard";
 import "../modal/modal.scss"
 import getAxiosDevicesInstance from "../../axios.devices.service";
@@ -18,6 +17,7 @@ const DeviceModal: React.FC<DeviceProperties> = (props: DeviceProperties): JSX.E
     }
 
     return <div className="modal">
+        <span>{props.device.id}</span>
         <label>Description</label>
         <input type="text" id="description" name="description" defaultValue={device.description} onChange={(event: any) => {device.description = event.target.value;setDevice(device)}}/>
         <label>Address</label>
